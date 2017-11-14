@@ -31,7 +31,6 @@ In Azure AD, a policy object represents a set of rules that are enforced on indi
 
 You can designate a policy as the default policy for your organization. The policy is applied to any application in the organization, as long as it is not overridden by a policy with a higher priority. You also can assign a policy to specific applications. The order of priority varies by policy type.
 
-
 ## Token types
 
 You can set token lifetime policies for refresh tokens, access tokens, session tokens, and ID tokens.
@@ -41,7 +40,6 @@ Clients use access tokens to access a protected resource. An access token can be
 
 ### Refresh tokens
 When a client acquires an access token to access a protected resource, the client receives both a refresh token and an access token. The refresh token is used to obtain new access/refresh token pairs when the current access token expires. A refresh token is bound to a combination of user and client. A refresh token can be revoked, and the token's validity is checked every time the token is used.
-
 It's important to make a distinction between confidential clients and public clients. For more information about different types of clients, see [RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.1).
 
 #### Token lifetimes with confidential client refresh tokens
@@ -71,7 +69,7 @@ A token lifetime policy is a type of policy object that contains token lifetime 
 | Property | Policy property string | Affects | Default | Minimum | Maximum |
 | --- | --- | --- | --- | --- | --- |
 | Access Token Lifetime |AccessTokenLifetime |Access tokens, ID tokens, SAML2 tokens |1 hour |10 minutes |1 day |
-| Refresh Token Max Inactive Time |MaxInactiveTime |Refresh tokens |14 days |10 minutes |90 days |
+| Refresh Token Max Inactive Time |MaxInactiveTime |Refresh tokens |90 days |10 minutes |90 days |
 | Single-Factor Refresh Token Max Age |MaxAgeSingleFactor |Refresh tokens (for any users) |Until-revoked |10 minutes |Until-revoked<sup>1</sup> |
 | Multi-Factor Refresh Token Max Age |MaxAgeMultiFactor |Refresh tokens (for any users) |Until-revoked |10 minutes |Until-revoked<sup>1</sup> |
 | Single-Factor Session Token Max Age |MaxAgeSessionSingleFactor<sup>2</sup> |Session tokens (persistent and nonpersistent) |Until-revoked |10 minutes |Until-revoked<sup>1</sup> |
